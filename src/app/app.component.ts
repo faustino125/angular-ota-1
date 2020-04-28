@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Usuario, FEMENINO, MASCULINO  } from './componente/usuario/usuario.domain';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
