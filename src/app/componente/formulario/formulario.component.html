@@ -1,21 +1,21 @@
-<form [formGroup]="formularioContacto">
+<form [formGroup]="formularioPrueba">
   <div class="form-group">
   <label>Nombre:</label>
-    <input type="text" formControlName="nombre" class="form-control">
-    <span *ngIf="this.formularioContacto.get('nombre').errors?.required">
+    <input type="text" formControlName="nombre" class="form-control" placeholder="Nombre completo">
+    <span *ngIf="this.formularioPrueba.get('nombre').errors?.required">
       (El nombre no puede quedar vacío)
     </span>
-    <span *ngIf="this.formularioContacto.get('nombre').errors?.minlength">
+    <span *ngIf="this.formularioPrueba.get('nombre').errors?.minlength">
       (Debe tener como mínimo 10 caracteres)
     </span>
 </div>
 <div class="form-group">
   <p>Mail:
-    <input type="text" formControlName="mail" class="form-control">
-    <span *ngIf="this.formularioContacto.get('mail').errors?.required">
+    <input type="text" formControlName="mail" class="form-control" placeholder="name@example.com">
+    <span *ngIf="this.formularioPrueba.get('mail').errors?.required">
       (El mail no puede quedar vacío)
     </span>
-    <span *ngIf="this.formularioContacto.get('mail').errors?.email">
+    <span *ngIf="this.formularioPrueba.get('mail').errors?.email">
       (El mail no es válido)
     </span>
   </p>

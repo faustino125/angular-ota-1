@@ -9,7 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class FormularioComponent{
   constructor(private fb:FormBuilder){}
 
-  formularioContacto=this.fb.group({
+  formularioPrueba=this.fb.group({
     nombre: ['',[Validators.required, Validators.minLength(10)]],
     mail: ['',[Validators.required, Validators.email]]
   });
