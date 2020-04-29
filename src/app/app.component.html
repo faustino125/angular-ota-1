@@ -8,8 +8,15 @@
 <div class="card text-white bg-dark mb-3">
   <div class="card-header">USUARIOS</div>
   <div class="card-body">
-    <app-formulario [formGroup]="formularioContacto"></app-formulario>
+<form #f="ngForm" >
+  <div class="text-center mb-4">
+  </div>
+  <app-formulario inputPlaceholder="Nombre completo" requerido="true" error="Por favor ingrese su nombre" etiqueta = "Nombre completo" ngModel name="nombre">
 
+  </app-formulario>
+
+ <app-formulario inputPlaceholder="correo" requerido="true" error="Ingrese un correo valido" etiqueta = "Correo" ngModel name="correo"></app-formulario>
+</form>
   </div>
 </div>
   </div>

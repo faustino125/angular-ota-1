@@ -1,24 +1,8 @@
-<form [formGroup]="formularioPrueba">
-  <div class="form-group">
-  <label>Nombre:</label>
-    <input type="text" formControlName="nombre" class="form-control" placeholder="Nombre completo">
-    <span *ngIf="this.formularioPrueba.get('nombre').errors?.required">
-      (El nombre no puede quedar vacío)
-    </span>
-    <span *ngIf="this.formularioPrueba.get('nombre').errors?.minlength">
-      (Debe tener como mínimo 10 caracteres)
-    </span>
-</div>
 <div class="form-group">
-  <p>Mail:
-    <input type="text" formControlName="mail" class="form-control" placeholder="name@example.com">
-    <span *ngIf="this.formularioPrueba.get('mail').errors?.required">
-      (El mail no puede quedar vacío)
-    </span>
-    <span *ngIf="this.formularioPrueba.get('mail').errors?.email">
-      (El mail no es válido)
-    </span>
-  </p>
+	<label >{{etiqueta}} <span class="required" *ngIf="requerido"></span> </label>
+	<input class="form-control" [type]="type" #input (input)="onChange($event.target.value)" (blur)="onTouched()"[disabled]="disabled" [placeholder]="placeholder">
+	<div>
+		<span *ngIf="(requerido && controlDir && controlDir.control.valid && controlDir.control.touched) || !requerido && input.value.length>0"></span>
+		<span style="color:#FF0000" *ngIf="controlDir && !controlDir.control.valid && controlDir.control.touched">{{error}}</span>
+	</div>
 </div>
-</form>
-<div>
