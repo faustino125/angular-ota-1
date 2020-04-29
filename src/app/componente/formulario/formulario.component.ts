@@ -25,7 +25,7 @@ export class FormularioComponent implements ControlValueAccessor, Validator, OnI
     const validators: ValidatorFn[] = control.validator ? [control.validator] : [];
     if (this.requerido) {
       validators.push(Validators.required);
-    }
+    } 
 
     control.setValidators(validators);
     control.updateValueAndValidity();
